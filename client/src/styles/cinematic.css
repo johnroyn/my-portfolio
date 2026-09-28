@@ -1,0 +1,127 @@
+/* Cinematic theme overrides and utility styles */
+:root {
+  --cin-black: #050505;
+  --cin-ivory: #f7f5f2;
+  --cin-silver: #cfcfcf;
+  --cin-crimson: #7a0d0d;
+  --cin-violet: #2b1436;
+}
+
+.cinematic-root {
+  background: linear-gradient(180deg, #020204 0%, #070707 100%);
+  color: var(--cin-ivory);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.cinematic-hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cinematic-line {
+  position: absolute;
+  height: 1px;
+  width: 0%;
+  background: linear-gradient(90deg, rgba(207,207,207,0.9), rgba(255,255,255,0.55));
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cinematic-title {
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.8rem;
+}
+
+.cinematic-name {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  letter-spacing: 0.02em;
+  color: var(--cin-ivory);
+}
+
+.cinematic-sub {
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.14em;
+  margin-top: 0.5rem;
+}
+
+.character-illustration {
+  width: min(46vw, 700px);
+  max-width: 48rem;
+  transform-origin: center center;
+  filter: drop-shadow(0 40px 80px rgba(0,0,0,0.6));
+}
+
+.portrait-illustration {
+  display: block;
+  width: min(38vw, 520px);
+  min-width: 300px;
+  height: auto;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 20px 24px 0 rgba(255, 255, 255, 0.08);
+}
+
+.portrait-illustration-compact {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.grain-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background-image: url('/__manus__/debug-collector.js');
+  opacity: 0.03;
+}
+
+.section-chapter {
+  padding: 8rem 2rem;
+  color: var(--foreground);
+}
+
+.profile-section {
+  color: var(--secondary-foreground);
+}
+
+.profile-portrait {
+  background: #c4c8cc;
+}
+
+.ability-archive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .ability-archive {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .portrait-illustration {
+    width: min(78vw, 420px);
+    min-width: 0;
+  }
+
+  .cinematic-hero {
+    min-height: 860px;
+    height: auto;
+    padding: 7rem 0 4rem;
+  }
+
+  .cinematic-hero .flex {
+    justify-content: center;
+  }
+}
